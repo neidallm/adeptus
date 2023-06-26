@@ -53,7 +53,7 @@ export const AppRouter = () => {
     <Router>
       <Routes>
         <Route exact path="/" element={<Login />} />
-        <Route path="*" element={<Login />} />
+        {/* <Route path="*" element={<Login />} /> */}
       </Routes>
       {userglobal?(
         <>
