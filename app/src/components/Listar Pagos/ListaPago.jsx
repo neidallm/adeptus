@@ -1,18 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useFetch } from "../../hooks/HookFetchListData";
-import { Document, Page, Text, View, StyleSheet, PDFDownloadLink } from "@react-pdf/renderer";
+import { Document, Page, Text, View, StyleSheet, PDFDownloadLink, Font } from "@react-pdf/renderer";
 import { Button, Table } from "react-bootstrap";
-import Header from "../Header/Header";
-import Aside from "../Aside/Aside";
-import Footer from "../Footer/Footer";
+import conforta from "../fuente conforta/Comfortaa-VariableFont_wght.ttf";
 
 export default function ListaPag() {
   return (
     <div>
-      {/* <Header />
-      <Aside /> */}
       <ListaPa />
-      {/* <Footer /> */}
     </div>
   );
 }
@@ -42,7 +37,7 @@ function ListaPa() {
 
   useEffect(() => {
     let totalMonto = 0;
-    if (DatosLeidos.length > 0&&!DatosLeidos.desError) {
+    if (DatosLeidos.length > 0 && !DatosLeidos.desError) {
       totalMonto = DatosLeidos.reduce(
         (total, reclamoPersona) =>
           total + parseInt(reclamoPersona.historial_pago_monto),
@@ -51,14 +46,15 @@ function ListaPa() {
     }
     setmontopagado(totalMonto);
   }, [DatosLeidos]);
+
   function filtrar(dato) {
     if (dato.desError) {
-      return(dato)
+      return dato;
     } else {
-      return dato.filter(obj => obj.historial_pago_monto !== null)
+      return dato.filter((obj) => obj.historial_pago_monto !== null);
     }
-      
   }
+
   const handleSelectChange = (event) => {
     setSelec(event.target.value);
     setmontopagado(0);
@@ -68,7 +64,7 @@ function ListaPa() {
         setFileName("lista_pagos_total.pdf"); // Cambiar el nombre del archivo
         break;
       case "Mes":
-        setDatosLeidos(filtrar (MesD));
+        setDatosLeidos(filtrar(MesD));
         setFileName("lista_pagos_mes.pdf"); // Cambiar el nombre del archivo
         break;
       case "Semana":
@@ -83,96 +79,104 @@ function ListaPa() {
 
   if (!loading && !MesL && !SemL) {
     if (DatosLeidos.length === 0) {
-      if (filtrar(data).length===0) {
-        
-        setDatosLeidos({"desError":"Listado fallido, es posible que no existan pagos"})
+      if (filtrar(data).length === 0) {
+        setDatosLeidos({ desError: "Listado fallido, es posible que no existan pagos" });
       } else {
         setDatosLeidos(filtrar(data));
       }
-      
     }
 
+    Font.register({
+      family: 'Comfortaa',
+      src: conforta,
+    });
+
+    // Estilos del documento
     const styles = StyleSheet.create({
       page: {
-        fontFamily: "Helvetica",
+        fontFamily: 'Comfortaa',
         fontSize: 12,
-        padding: "1cm",
+        padding: '1cm',
       },
       title: {
         fontSize: 18,
         marginBottom: 10,
-        textAlign: "center",
+        textAlign: 'center',
       },
       subtitle: {
         fontSize: 14,
         marginBottom: 10,
       },
       table: {
-        display: "table",
-        width: "auto",
+        display: 'table',
+        width: 'auto',
         marginTop: 10,
-        borderStyle: "solid",
+        borderStyle: 'solid',
         borderWidth: 1,
-        borderColor: "#000",
+        borderColor: '#000',
+        tableLayout: 'fixed', // Establece el ancho de las celdas de manera uniforme
       },
       tableRow: {
-        flexDirection: "row",
+        flexDirection: 'row',
       },
       tableCell: {
-        borderStyle: "solid",
+        borderStyle: 'solid',
         borderWidth: 1,
-        borderColor: "#000",
+        borderColor: '#000',
         padding: 5,
+        width: '25%', // Establece el ancho de las celdas al 25% para distribuir de manera uniforme
+        textAlign: 'center', // Centra el contenido de las celdas
       },
       totalRow: {
-        fontWeight: "bold",
+        fontWeight: 'bold',
       },
     });
-   
-      const PDFDocument = () => (
-        <Document>
-          <Page size="A4" style={styles.page}>
-            <View>
-              <Text style={styles.title}>Lista de Pagos</Text>
-              <Text style={styles.subtitle}>Seleccionado: {Selec}</Text>
-            </View>
-            <View style={styles.table}>
-              <View style={styles.tableRow}>
-                <Text style={styles.tableCell}>Cliente</Text>
-                <Text style={styles.tableCell}>Fecha</Text>
-                <Text style={styles.tableCell}>Monto</Text>
-                <Text style={styles.tableCell}>Parqueo</Text>
-              </View>
-              {DatosLeidos.map((reclamoPersona) => (
-                <View style={styles.tableRow} key={reclamoPersona.historial_pago_id}>
-                  <Text style={styles.tableCell}>{reclamoPersona.cliente}</Text>
-                  <Text style={styles.tableCell}>{reclamoPersona.historial_pago_fecha}</Text>
-                  <Text style={styles.tableCell}>{reclamoPersona.historial_pago_monto} Bs.</Text>
-                  <Text style={styles.tableCell}>{reclamoPersona.suscripcion_numero_parqueo}</Text>
-                </View>
-              ))}
-              <View style={[styles.tableRow, styles.totalRow]}>
-                <Text style={[styles.tableCell, { colspan: 3 }]}>El Monto Pagado {Selec} es:</Text>
-                <Text style={styles.tableCell}>{montopagado} Bs.</Text>
-              </View>
-            </View>
-          </Page>
-        </Document>
-      );
     
-    
-       
+
+    const PDFDocument = () => (
+      <Document>
+        <Page size="A4" style={styles.page}>
+          <View>
+            <Text style={styles.title}>Lista de Pagos</Text>
+            <Text style={styles.subtitle}>Seleccionado: {Selec}</Text>
+          </View>
+          <View style={styles.table}>
+            <View style={styles.tableRow}>
+              <Text style={styles.tableCell}>Cliente</Text>
+              <Text style={styles.tableCell}>Fecha</Text>
+              <Text style={styles.tableCell}>Monto</Text>
+              <Text style={styles.tableCell}>Parqueo</Text>
+            </View>
+            {DatosLeidos.map((reclamoPersona) => (
+              <View style={styles.tableRow} key={reclamoPersona.historial_pago_id}>
+                <Text style={styles.tableCell}>{reclamoPersona.cliente}</Text>
+                <Text style={styles.tableCell}>{reclamoPersona.historial_pago_fecha}</Text>
+                <Text style={styles.tableCell}>{reclamoPersona.historial_pago_monto} Bs.</Text>
+                <Text style={styles.tableCell}>{reclamoPersona.suscripcion_numero_parqueo}</Text>
+              </View>
+            ))}
+            <View style={[styles.tableRow, styles.totalRow]}>
+              <Text style={[styles.tableCell, { colSpan: 3 }]}>El Monto Pagado {Selec} es:</Text>
+              <Text style={styles.tableCell}></Text>
+              <Text style={styles.tableCell}>{montopagado} Bs.</Text>
+              <Text style={styles.tableCell}></Text>
+            </View>
+          </View>
+        </Page>
+      </Document>
+    );
+
     return (
-      <div className="content-wrapper contenteSites-body" style={{minHeight: '100vh'}} >
+      <div className="content-wrapper contenteSites-body" style={{ minHeight: '100vh' }}>
         <label>Lista de Pagos</label>
-       
         <div className="buttonSection">
-        {!DatosLeidos.desError?(<PDFDownloadLink document={<PDFDocument />} fileName={fileName}>
-            {({ blob, url, loading, error }) =>
-              loading ? "Preparando PDF" : <Button variant="success">Descargar PDF</Button>
-            }
-          </PDFDownloadLink>):null}
-          
+          {!DatosLeidos.desError ? (
+            <PDFDownloadLink document={<PDFDocument />} fileName={fileName}>
+              {({ blob, url, loading, error }) =>
+                loading ? "Preparando PDF" : <Button variant="success">Descargar PDF</Button>
+              }
+            </PDFDownloadLink>
+          ) : null}
           <select
             style={{ borderRadius: "5px" }}
             value={Selec}
@@ -193,29 +197,36 @@ function ListaPa() {
               <th>Parqueo</th>
             </tr>
           </thead>
-          
-            {!DatosLeidos.desError?(<tbody>
-            {DatosLeidos.map((reclamoPersona) => (
-              <tr key={reclamoPersona.historial_pago_id}>
-                <td>{reclamoPersona.cliente}</td>
-                <td>{reclamoPersona.historial_pago_fecha}</td>
-                <td>{reclamoPersona.historial_pago_monto} Bs.</td>
-                <td>{reclamoPersona.historial_pago_sitio}</td>
+          {!DatosLeidos.desError ? (
+            <tbody>
+              {DatosLeidos.map((reclamoPersona) => (
+                <tr key={reclamoPersona.historial_pago_id}>
+                  <td>{reclamoPersona.cliente}</td>
+                  <td>{reclamoPersona.historial_pago_fecha}</td>
+                  <td>{reclamoPersona.historial_pago_monto} Bs.</td>
+                  <td>{reclamoPersona.suscripcion_numero_parqueo}</td>
+                </tr>
+              ))}
+              <tr className="totalRow">
+                <td colSpan="2">El Monto Pagado {Selec} es:</td>
+                <td >{montopagado} Bs.</td>
+                <td ></td>
               </tr>
-            ))}
-        
-            
-            <tr className="totalRow">
-              <td colSpan="3">El Monto Pagado {Selec} es:</td>
-              <td>{montopagado} Bs.</td>
-            </tr></tbody>):(<tbody><tr className="totalRow">
-            <td colSpan="4">No eiste pagos en {Selec}</td>              
-          </tr></tbody>)}
+            </tbody>
+          ) : (
+            <tbody>
+              <tr className="totalRow">
+                <td colSpan="4">No existe pagos en {Selec}</td>
+              </tr>
+            </tbody>
+          )}
         </Table>
-        <br/><br/>
+        <br /><br />
       </div>
     );
   } else {
     return null; // Mostrar un componente de carga o mensaje de error mientras se obtienen los datos
   }
 }
+
+
