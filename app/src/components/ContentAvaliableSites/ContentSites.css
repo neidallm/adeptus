@@ -1,0 +1,22 @@
+.contenteSites-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 32px;
+}
+
+.table{
+    max-width: 60vw;
+}
+
+.buttonsGroup{
+    width: 180px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 20px 0px;
+}
+
+.csv{
+    color: #fff;
+}

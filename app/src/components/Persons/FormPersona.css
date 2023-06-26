@@ -1,0 +1,16 @@
+.contentModalPerson{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.column{
+    
+    
+    width: 194.60000000000002px;
+}
+
+
+.label{
+    margin-top: 12px;
+}

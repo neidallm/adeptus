@@ -1,0 +1,83 @@
+.content-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 32px;
+}
+
+.table{
+    max-width: 60vw;
+    margin: 1px;
+}
+
+.btn-lg{
+    margin: 5px;
+}
+
+.contenteSites-body{
+    display: flex;
+    align-items: center;
+    padding-top: 32px;
+}
+
+.columnTittle>th{
+    text-align: center;
+}
+
+.bodyItems{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-width: 60vw;
+}
+
+.buttonSection{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    min-width: 60vw;
+    margin-bottom: 24px;
+}
+.searchBar{
+    max-width: 300px;
+}
+
+.actionsButtons{
+    text-align: center;
+}
+
+.columnContent>td{
+    text-align: center;
+}
+
+/* njfbvhb */
+
+.contentModalPerson{
+    display: flex;
+    justify-content: space-between;
+}
+
+.column{
+    flex: 1;
+    padding: 0 10px;
+}
+
+.label{
+    margin-top: 12px;
+}
+
+.inputGroup{
+    text-align: left;
+}
+
+
+ul {
+    list-style: none;
+    text-align: left;
+}
+
+.custom-image {
+    width: 300px;
+    height: 300px;
+  }
+  

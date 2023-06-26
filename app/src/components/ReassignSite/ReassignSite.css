@@ -1,0 +1,14 @@
+.reassignSite-Body{
+    display: flex;
+    justify-content: center;
+    padding-top: 32px;
+}
+
+.selectSite{
+    display: flex;
+    flex-direction: row;
+}
+
+.submitBtn{
+    margin: 0px 12px;
+}

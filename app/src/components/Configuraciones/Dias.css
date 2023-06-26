@@ -1,0 +1,6 @@
+.entrada-time-picker .react-time-picker__inputGroup__input,
+.salida-time-picker .react-time-picker__inputGroup__input {
+  width: 50px;
+  font-size: 16px;
+}
+  

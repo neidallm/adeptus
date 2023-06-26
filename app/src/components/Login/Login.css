@@ -1,0 +1,40 @@
+.login {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), url('./Background\ Unipark\ Login.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 138px 0;
+  height: 100vh;
+}
+.card-body{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.iniciar-button{
+    margin-bottom: 32px;
+}
+
+.forgot-password{
+    color: #007BFF;
+    margin: 8px 0px;
+}
+
+.forgot-password:hover{
+    cursor: pointer;
+}
+
+.forgot-password-modal{
+    font-size: 1.5rem;
+}
+
+.modal-body{
+    text-align: center;
+}
+
+.modal-button{
+    margin-top: 1.5rem;
+    width: 120px;
+}

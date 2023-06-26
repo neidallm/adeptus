@@ -1,0 +1,13 @@
+.combobox{
+    width: 600px;
+}
+
+.comboBoxGroup{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.selectRef{
+    min-width: 228px    ;
+}

@@ -1,0 +1,40 @@
+.contenteSites-body{
+    display: flex;
+    align-items: center;
+    padding-top: 32px;
+}
+
+.columnTittle>th{
+    text-align: center;
+}
+
+.bodyItems{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-width: 60vw;
+}
+
+.buttonSection{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    min-width: 60vw;
+    margin-bottom: 24px;
+}
+.searchBar{
+    max-width: 300px;
+}
+
+.actionsButtons{
+    text-align: center;
+}
+
+.columnContent>td{
+    text-align: center;
+}
+
+.searchBar2{
+    margin-top: 32px;
+    max-width: 300px;
+}

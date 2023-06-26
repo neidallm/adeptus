@@ -1,0 +1,62 @@
+[
+  {
+    "persona_id": "1",
+    "persona_tipo": "3",
+    "persona_nombre": "Kenneth",
+    "persona_apellido": "Rodriguez",
+    "persona_ci": "420241859",
+    "persona_telefono": "5912054965886",
+    "persona_telegram": "?",
+    "persona_estado": "1",
+    "persona_nickname": "Yesquir",
+    "persona_contrase\u00f1a": "wah6Eaba3i"
+  },
+  {
+    "persona_id": "2",
+    "persona_tipo": "3",
+    "persona_nombre": "Joe",
+    "persona_apellido": "Williams",
+    "persona_ci": "464241685",
+    "persona_telefono": "5917136602271",
+    "persona_telegram": "?",
+    "persona_estado": "1",
+    "persona_nickname": "Whislove",
+    "persona_contrase\u00f1a": "baghah2iK"
+  },
+  {
+    "persona_id": "3",
+    "persona_tipo": "3",
+    "persona_nombre": "Harol",
+    "persona_apellido": "Arcos",
+    "persona_ci": "5295189",
+    "persona_telefono": "59167418809",
+    "persona_telegram": "",
+    "persona_estado": "1",
+    "persona_nickname": "Harex",
+    "persona_contrase\u00f1a": "abc123"
+  },
+  {
+    "persona_id": "4",
+    "persona_tipo": "3",
+    "persona_nombre": "Harol",
+    "persona_apellido": "Arcos",
+    "persona_ci": "5295189",
+    "persona_telefono": "59167418809",
+    "persona_telegram": "",
+    "persona_estado": "1",
+    "persona_nickname": "Harex",
+    "persona_contrase\u00f1a": "abc123"
+  },
+  {
+    "persona_id": "5",
+    "persona_tipo": "3",
+    "persona_nombre": "Harol",
+    "persona_apellido": "Arcos",
+    "persona_ci": "5295189",
+    "persona_telefono": "59167418809",
+    "persona_telegram": "",
+    "persona_estado": "1",
+    "persona_nickname": "Harex",
+    "persona_contrase\u00f1a": "abc123"
+  }
+]

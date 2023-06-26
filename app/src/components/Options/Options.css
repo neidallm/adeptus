@@ -1,0 +1,53 @@
+.FormAddRol{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* min-width: 600px; */
+    /* margin: 0px 200px; */
+}
+
+.FormAddRol>Button{
+    margin-top: 24px;
+    max-width: 200px;
+}
+
+.titleOptions{
+    margin-top: 24px;
+}
+
+.comboboxRol{
+    max-width: 340px;
+}
+
+.tab-content{
+    background-color: #fff;
+}
+
+.error-message{
+    color: #ff0000;
+}
+
+.opcionPadre{
+    background-color: #198754f7;
+    padding-left: 16px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-radius: 4px;
+    max-width: 380px;
+}
+
+.opcionHija{
+    left: 32px;
+}
+
+.aviso{
+    color: #ff0000;
+}
+
+.addoptionssection{
+    padding: 32px;
+}
+
+.addrolsection{
+    padding-top: 32px;
+}
