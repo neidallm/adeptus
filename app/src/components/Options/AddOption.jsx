@@ -190,6 +190,7 @@ export default function AddOptions () {
                   </React.Fragment>
                 ))}
               </Form>
+              <br /><br />
             </Col>
             <Col>
             <h3>Opciones seleccionadas:</h3>
