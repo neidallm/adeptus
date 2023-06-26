@@ -6,7 +6,7 @@ import "./Tarifa.css"
 import ComboboxReferences from "../ComboboxReferences/ComboboxReferences";
 
 const Formulario = ({asunto,cancelar, tarifa = null,listaT=null}) => {
-
+console.log(tarifa);
 
   const {data,fetchData} = useFetchSendData();
 
@@ -369,7 +369,7 @@ const Formulario = ({asunto,cancelar, tarifa = null,listaT=null}) => {
                 </div>
               </div>
             </Alert>
-            ):(
+            ): tarifa==null && !showA? (
             <>
             <Button variant="secondary" onClick={cancelar}>
                 Cancelar
@@ -378,7 +378,7 @@ const Formulario = ({asunto,cancelar, tarifa = null,listaT=null}) => {
               {asunto}
               </Button>
             </>
-              )}
+              ):(<></>)}
             
           </Modal.Footer>
           
