@@ -24,7 +24,7 @@ function ListaPa() {
 
   useEffect(() => {
     sendAndReceiveJson(
-      "http://localhostUniPark-Adeptus-Code/ADEPTUSCODE-BackEnd/app/apiHistoryPay/apiHistoryPay.php/listHistoryPayClient",
+      "http://localhost/UniPark-Adeptus-Code/ADEPTUSCODE-BackEnd/app/apiHistoryPay/apiHistoryPay.php/listHistoryPayClient",
       {
         idPerson: userglobal.persona_id,
       }

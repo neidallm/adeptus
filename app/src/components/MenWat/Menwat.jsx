@@ -29,7 +29,7 @@ export default function Whats({ subs, cerrar, show }) {
       subs.cliente +
       
       ".\nSe le avisa que su Suscripcion Termino la fecha de "+
-      subs.suscripcion_expiracion.slice(0, 10)+
+      subs.suscripcion_expiracion.slice(0, 10)+"y su mora es de bs. "+subs.tarifa_valor+
       ". ";
     return (
       <>
