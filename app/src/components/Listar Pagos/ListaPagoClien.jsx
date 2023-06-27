@@ -73,7 +73,7 @@ function ListaPa() {
                 <td>{reclamoPersona.cliente}</td>
                 <td>{reclamoPersona.historial_pago_fecha}</td>
                 <td>{reclamoPersona.historial_pago_monto} Bs.</td>
-                <td>{reclamoPersona.suscripcion_numero_parqueo}</td>
+                <td>{reclamoPersona.historial_pago_sitio}</td>
               </tr>
             ))}
 
