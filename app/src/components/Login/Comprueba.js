@@ -5,7 +5,9 @@ export default function Comprueba (navigate, datos,setUserglobal) {
     if (datos.desError) {
         return datos.desError
     } else {
-        
+        if (!datos.persona) {
+            return "no se encontro a la persona en la db o su estado es inactivo";
+          } else {
         
         
         fetch("http://localhost/UniPark-Adeptus-Code/ADEPTUSCODE-BackEnd/app/apiSubscription/apiSubscription.php/listSubscription")
@@ -28,16 +30,19 @@ export default function Comprueba (navigate, datos,setUserglobal) {
         
             })
 
-        .finally(setUserglobal(datos.persona[0]),
+            .finally(setUserglobal(datos.persona[0]),
             localStorage.setItem("user",JSON.stringify(datos.persona[0])),
             localStorage.setItem("optionsPadre",JSON.stringify(datos["opciones padre 0"])),
             localStorage.setItem("optionsHijo",JSON.stringify(datos["opciones padre disferente de 0"])),
             
             localStorage.setItem("recar",true),
+                    
+                    navigate("/main")
+                
+              );
             
-            navigate("/main"))
             
     }
-    
+}
     
 }
