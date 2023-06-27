@@ -17,6 +17,7 @@ export default function Listapagoclien() {
   );
 }
 
+//comeennt
 function ListaPa() {
   const { userglobal } = useContext(DataUser);
   const [listau, setlistau] = useState([]);
